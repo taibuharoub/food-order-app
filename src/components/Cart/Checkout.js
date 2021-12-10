@@ -52,6 +52,19 @@ const Checkout = (props) => {
     }
 
     // submit cart data to server
+    console.group("User data");
+    console.log({ enteredName });
+    console.log({ enteredStreet });
+    console.log({ enteredPostalCode });
+    console.log({ enteredCity });
+    console.groupEnd("User data");
+
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      postalCode: enteredPostalCode,
+      city: enteredCity,
+    });
   };
 
   const nameControlClasses = `${classes.control} ${
